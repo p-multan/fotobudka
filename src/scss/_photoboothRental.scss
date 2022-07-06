@@ -1,0 +1,79 @@
+@use './variables' as *;
+@use './mixins';
+
+.photobooth-rental {
+  height: 50vh;
+  position: relative;
+  padding: 0;
+  &__info {
+    &-title {
+      display: none;
+    }
+
+    &-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70vw;
+    }
+  }
+
+  &__cover {
+    height: 100%;
+    width: 100%;
+
+    &-img {
+      min-height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+// Media Queries
+// Over 1024px
+
+@include mixins.mQ(large) {
+  .photobooth-rental {
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+
+    position: initial;
+    &__info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4rem;
+      width: 49%;
+      height: 100%;
+      &-title {
+        display: block;
+        font-family: 'Playfair Display', serif;
+        color: $title-color;
+        font-size: 2.5rem;
+        font-weight: 400;
+        text-align: center;
+      }
+
+      &-button {
+        position: initial;
+        top: initial;
+        left: initial;
+        transform: initial;
+        width: 50%;
+      }
+    }
+
+    &__cover {
+      width: 49%;
+      height: 100%;
+
+      &-img {
+        min-height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

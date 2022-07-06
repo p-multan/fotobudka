@@ -1,0 +1,98 @@
+@use './mixins';
+@use './variables' as *;
+
+.cookies-popup {
+  @include mixins.position(fixed, null, 50%, 2%);
+  z-index: 10;
+  transform: translateX(50%);
+  width: 95%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: lighten($mint-color, 10%);
+  border: 1px solid $dark-mint-color;
+  border-radius: 5px;
+  outline-style: solid;
+  outline-color: lighten($mint-color, 10%);
+  outline-width: 1rem;
+  font-size: 1.6rem;
+  text-align: center;
+  color: $text-dark-color;
+  transition: transform 0.8s linear;
+  overflow: hidden;
+
+  &.accepted {
+    transform: translateX(500%);
+  }
+
+  &.hidden {
+    position: initial;
+    transform: initial;
+    height: 0;
+    display: none;
+  }
+
+  &__buttons {
+    width: 75%;
+    margin: 2rem auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__button {
+    width: 46%;
+    text-align: center;
+    box-shadow: none;
+    background-color: darken($beige-color, 7%);
+    padding: 1rem 2rem;
+    outline: none;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.3s ease-in;
+
+    &:hover {
+      background-color: $mint-color;
+      color: $brown-color;
+    }
+  }
+}
+
+// MEDIA QUERIES
+
+// OVER 768 PX
+
+@include mixins.mQ(medium) {
+  .cookies-popup {
+    font-size: 1.8rem;
+
+    &__buttons {
+      width: 50%;
+    }
+  }
+}
+
+// OVER 1200 PX
+@include mixins.mQ(xlarge) {
+  .cookies-popup {
+    &__text {
+      width: 75%;
+      margin: 0 auto;
+    }
+
+    &__buttons {
+      width: 30%;
+    }
+  }
+}
+
+// OVER 1450 PX
+@include mixins.mQ(xxlarge) {
+  .cookies-popup {
+    padding: 3rem;
+    &__buttons {
+      width: 25%;
+    }
+  }
+}

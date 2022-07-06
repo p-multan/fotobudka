@@ -1,0 +1,23 @@
+@use './variables' as *;
+@use './mixins';
+
+.head-banner {
+  display: none;
+  padding: 0;
+}
+
+// Media Queries
+// Over 768px
+
+@include mixins.mQ(medium) {
+  .head-banner {
+    max-height: 500px;
+    overflow: hidden;
+    display: block;
+    padding: 0;
+
+    &-img {
+      object-fit: cover;
+    }
+  }
+}

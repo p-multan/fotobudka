@@ -1,0 +1,194 @@
+@use './variables' as *;
+@use './mixins';
+
+.container {
+  width: 90%;
+  max-width: $website-width;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+body {
+  background-color: $background-color;
+}
+
+// Buttons
+
+.btn {
+  display: block;
+  width: 30%;
+  margin: 0.8rem auto;
+  padding: 1.4rem 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: background 0.3s;
+
+  &--main {
+    color: $main-color;
+    background: $title-color;
+
+    &:hover {
+      background: lighten($title-color, 20%);
+    }
+  }
+}
+
+// Utility classes
+.text-lead {
+  font-size: 1.5rem;
+  line-height: 2;
+  margin: 1rem 0 2rem;
+}
+
+.text-emphasise {
+  text-decoration: underline;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: $title-color;
+  font-weight: 700;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+
+  &--slim {
+    font-weight: 500;
+  }
+
+  &--page-title {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: $text-dark-color;
+    text-align: center;
+  }
+}
+
+.section-subtitle {
+  font-weight: initial;
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.item-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Background Classes
+
+.bg {
+  &--medium {
+    background: $background-color-darker;
+  }
+}
+
+// Padding classes
+.py {
+  &-1 {
+    padding: 1rem 0;
+  }
+  &-2 {
+    padding: 2rem 0;
+  }
+  &-3 {
+    padding: 3rem 0;
+  }
+  &-4 {
+    padding: 4rem 0;
+  }
+  &-6 {
+    padding: 6rem 0;
+  }
+}
+
+.px {
+  &-1 {
+    padding: 0 1rem;
+  }
+  &-2 {
+    padding: 0 2rem;
+  }
+  &-3 {
+    padding: 0 3rem;
+  }
+  &-4 {
+    padding: 0 4rem;
+  }
+}
+
+// Margin classes
+.my {
+  &-1 {
+    margin: 1rem 0;
+  }
+  &-2 {
+    margin: 2rem 0;
+  }
+  &-3 {
+    margin: 3rem 0;
+  }
+  &-4 {
+    margin: 4rem 0;
+  }
+}
+
+// Media Queries
+// Over 768px
+
+@include mixins.mQ(medium) {
+  .section-title {
+    font-size: 4rem;
+    font-weight: 400;
+    &--m-big {
+      font-size: 6rem;
+      text-align: center;
+      margin-bottom: 0;
+      padding: 0;
+    }
+
+    &--page-title {
+      display: none;
+    }
+  }
+
+  .section-subtitle {
+    font-size: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+  }
+}
+
+// OVER 1024PX
+
+@include mixins.mQ(large) {
+  .section-title {
+    &--m-big {
+      font-size: 7.2rem;
+      font-weight: 700;
+    }
+
+    &--l-left {
+      text-align: left;
+    }
+  }
+
+  .text-lead {
+    &--l-center {
+      text-align: center;
+    }
+  }
+
+  .container {
+    width: 90%;
+  }
+}

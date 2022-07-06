@@ -1,0 +1,22 @@
+@use './variables';
+
+@mixin position($type, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $type;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin mQ($breakpointWidth, $breakpointHeight: null) {
+  $width: map-get(variables.$breakpointsWidth, $breakpointWidth);
+  $height: map-get(variables.$breakpointsHeight, $breakpointHeight);
+
+  @if ($width) {
+    @media only screen and (min-width: $width) and (min-height: 400px) {
+      @content;
+    }
+  } @else {
+    @error '"#{variables.$breakpoint}" - błąd';
+  }
+}

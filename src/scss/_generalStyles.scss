@@ -1,0 +1,42 @@
+@use './variables' as *;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;800&family=Quicksand:wght@300;400&display=swap');
+
+// General Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 10px;
+}
+
+body {
+  // font-family: 'Playfair Display', serif;
+  font-family: 'Quicksand', sans-serif;
+  line-height: 1.6;
+  background: #f6f3f3;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: $text-dark-color;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+section {
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}

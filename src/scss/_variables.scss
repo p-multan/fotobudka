@@ -1,0 +1,28 @@
+// Variables
+$website-width: 1200px;
+$background-color: #fdfcf9;
+$background-color-darker: #f2efe5;
+$main-color: #e5d4c7;
+
+$title-color: #ae582d;
+$text-dark-color: #414042;
+
+// Breakpoints width
+$breakpointsWidth: (
+  xxsmall: 250px,
+  msmall: 300px,
+  xsmall: 400px,
+  small: 460px,
+  smedium: 550px,
+  medium: 768px,
+  large: 1024px,
+  xlarge: 1200px,
+  xxlarge: 1450px,
+  hd: 1920px,
+  giga: 2000px,
+);
+
+// Breakpoints height
+$breakpointsHeight: (
+  small: 390px,
+);

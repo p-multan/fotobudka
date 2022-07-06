@@ -1,0 +1,198 @@
+@use './variables' as *;
+@use './mixins';
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  &__info {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+
+    &-desc {
+      font-size: 1.4rem;
+    }
+
+    &-details {
+      display: flex;
+      flex-direction: column;
+      margin: 4rem 0 2rem;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+      gap: 2rem;
+
+      &-icon {
+        font-size: 2.6rem;
+        color: $title-color;
+      }
+    }
+  }
+
+  &__message {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+
+    &-icon {
+      color: $title-color;
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    &-form {
+      width: 100%;
+
+      &-row {
+        margin-bottom: 1rem;
+        text-align: left;
+      }
+
+      &-label {
+        font-size: 1.4rem;
+        display: block;
+      }
+
+      &-input,
+      &-textarea {
+        width: 100%;
+        border: 1px solid $text-dark-color;
+        outline: none;
+        font-size: 1.4rem;
+        padding: 1rem 0.5rem;
+      }
+
+      &-textarea {
+        min-height: 100px;
+      }
+
+      &-button {
+        width: 100%;
+        border-radius: 0;
+        border: 1px solid $text-dark-color;
+        outline: none;
+        box-shadow: none;
+        background-color: $text-dark-color;
+        font-size: 1.4rem;
+        color: $background-color;
+        padding: 1.25rem;
+        cursor: pointer;
+        transition: 0.3s linear;
+
+        &:hover {
+          background-color: $background-color;
+          color: $text-dark-color;
+        }
+      }
+    }
+  }
+}
+
+// Media Queries
+// Over 768px
+
+@include mixins.mQ(medium) {
+  .contact-section {
+    min-height: 100vh;
+    &__info {
+      margin: 0;
+      &-desc {
+        font-size: 1.8rem;
+      }
+
+      &-details {
+        font-size: 1.6rem;
+
+        &-icon {
+          font-size: 3rem;
+          color: $title-color;
+        }
+      }
+    }
+
+    &__message {
+      &-icon {
+        font-size: 4rem;
+      }
+
+      &-form {
+        &-label {
+          font-size: 1.6rem;
+        }
+
+        &-input,
+        &-textarea {
+          font-size: 1.6rem;
+          padding: 1rem;
+        }
+
+        &-button {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+}
+
+// Over 1024px
+
+@include mixins.mQ(large) {
+  .contact-section {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    padding: 8rem 0;
+
+    &__info {
+      width: 50%;
+
+      &-title {
+        margin-bottom: 2rem;
+      }
+
+      &-desc {
+        font-size: 1.6rem;
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      &-details {
+        font-size: 1.6rem;
+        letter-spacing: 0.5px;
+        gap: 3rem;
+
+        &-icon {
+          font-size: 3rem;
+          color: $title-color;
+        }
+      }
+    }
+
+    &__message {
+      width: 45%;
+      &-icon {
+        font-size: 4rem;
+      }
+
+      &-form {
+        &-label {
+          font-size: 1.6rem;
+        }
+
+        &-input,
+        &-textarea {
+          font-size: 1.6rem;
+          padding: 1rem;
+        }
+
+        &-button {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+}

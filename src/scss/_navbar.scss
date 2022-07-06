@@ -1,0 +1,208 @@
+@use './variables' as *;
+@use './mixins';
+
+.navbar {
+  padding: 1rem 0;
+  background-color: $main-color;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-link {
+      width: 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &-logo {
+        width: 100%;
+      }
+    }
+  }
+
+  &__buttons {
+    width: 90%;
+    margin: 1rem auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-icon {
+      font-size: 2.6rem;
+
+      &--hamburger {
+        font-size: 3rem;
+      }
+    }
+
+    &-socials {
+      width: 20%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-hamburger {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  &__links {
+    &-menu {
+      height: 0;
+      overflow: hidden;
+      transition: 0.3s ease-in-out;
+
+      &.js-menu-open {
+        height: calc(5 * 4rem);
+      }
+
+      width: 100%;
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+
+      &-item {
+        height: 4rem;
+        border-top: 1px solid #eceadd;
+        font-size: 1.5rem;
+        text-align: center;
+        cursor: pointer;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transform: 0.3s linear;
+
+        &-link {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          width: 100%;
+          transform: scale(1);
+          transition: 0.2s linear;
+
+          &:hover {
+            color: #ad7a6f;
+            transform: scale(1.15);
+          }
+
+          &--active {
+            color: #ad7a6f;
+          }
+        }
+      }
+    }
+
+    &-socials {
+      display: none;
+    }
+  }
+}
+
+// Media Queries
+// Over 768px
+
+@include mixins.mQ(medium) {
+  .navbar {
+    padding: 0;
+
+    &__header {
+      &-link {
+        width: 20%;
+        max-width: calc($website-width/5.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &-logo {
+          width: 100%;
+        }
+      }
+    }
+
+    &__buttons {
+      display: none;
+    }
+
+    &__links {
+      position: relative;
+      width: 100%;
+      background-color: lighten($main-color, 8%);
+      &-menu {
+        width: 85%;
+        max-width: $website-width;
+        margin: 0 auto;
+        height: auto;
+
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+
+        &-item {
+          border-top: none;
+          font-size: 1.4rem;
+          min-width: 130px;
+          padding: 3rem 0;
+
+          &-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+
+            &:hover,
+            &--active {
+              color: #ad7a6f;
+            }
+          }
+        }
+      }
+
+      &-socials {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 7rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        &-link {
+          font-size: 2.6rem;
+        }
+      }
+    }
+  }
+}
+
+// Over 1200px
+
+@include mixins.mQ(xlarge) {
+  .navbar {
+    &__links {
+      &-socials {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 9rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        &-link {
+          font-size: 2.6rem;
+        }
+      }
+    }
+  }
+}
