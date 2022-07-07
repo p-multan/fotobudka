@@ -38,6 +38,7 @@ body {
 
 // Utility classes
 .text-lead {
+  text-align: center;
   font-size: 1.5rem;
   line-height: 2;
   margin: 1rem 0 2rem;
@@ -50,6 +51,7 @@ body {
 .section-title {
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
+  text-align: center;
   color: $title-color;
   font-weight: 700;
   padding-bottom: 0.5rem;
@@ -63,11 +65,11 @@ body {
     font-size: 2.5rem;
     font-weight: 500;
     color: $text-dark-color;
-    text-align: center;
   }
 }
 
 .section-subtitle {
+  text-align: center;
   font-weight: initial;
   font-size: 1.8rem;
   line-height: 1.8;
@@ -151,7 +153,6 @@ body {
     font-weight: 400;
     &--m-big {
       font-size: 6rem;
-      text-align: center;
       margin-bottom: 0;
       padding: 0;
     }
@@ -163,7 +164,6 @@ body {
 
   .section-subtitle {
     font-size: 2rem;
-    text-align: center;
     margin: 2rem 0;
   }
 }
@@ -179,12 +179,6 @@ body {
 
     &--l-left {
       text-align: left;
-    }
-  }
-
-  .text-lead {
-    &--l-center {
-      text-align: center;
     }
   }
 
