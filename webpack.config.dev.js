@@ -78,14 +78,7 @@ module.exports = {
         collapseWhitespace: true,
       },
     }),
-    new HtmlWebpackPlugin({
-      chunks: ['index', 'style'],
-      template: path.resolve(__dirname, 'src', 'wycena.html'),
-      filename: path.resolve(__dirname, 'dist', 'wycena.html'),
-      minify: {
-        collapseWhitespace: true,
-      },
-    }),
+
     new webpack.HotModuleReplacementPlugin(),
   ],
   devServer: {
