@@ -1,0 +1,311 @@
+@use './variables' as *;
+@use './mixins';
+
+.offer-page {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(/src/img/offer-bg.jpg) no-repeat center center/cover;
+
+  &__backdrop {
+    width: 100%;
+    height: 100%;
+    padding: 2rem 0 4rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+  }
+
+  &__content {
+    max-width: $website-width;
+    margin: 0 auto 1rem;
+    &-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      text-align: center;
+      color: $title-color;
+      font-weight: 700;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    &-subtitle {
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+      font-weight: 500;
+      font-size: 1.8rem;
+      line-height: 1.8;
+
+      &--tip {
+        border: 1px solid $yellow-color;
+        margin: 3rem auto;
+        padding: 2rem 3rem;
+        font-size: 1.6rem;
+      }
+    }
+
+    &-subheading {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      text-align: center;
+      color: $title-color;
+      font-weight: 700;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    &-cards {
+      margin: 2rem 0;
+      display: flex;
+      flex-direction: column;
+      align-content: space-around;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    &-card {
+      width: 80%;
+      margin: 0 auto;
+      border: 1px solid $title-color;
+      font-size: 1.6rem;
+      box-shadow: 0px 0px 56px -3px rgba(0, 0, 0, 0.58);
+      background-color: lighten($main-color, 8%);
+
+      &-name {
+        width: 100%;
+        padding: 1.5rem 0;
+        font-size: 2rem;
+        background-color: $title-color;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      &-container {
+        width: 85%;
+        margin: 1rem auto;
+      }
+
+      &-price {
+        display: block;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      &-details {
+        text-align: center;
+        width: 75%;
+        margin: 0 auto;
+        letter-spacing: 1px;
+
+        &-item {
+          margin-bottom: 0.8rem;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          &-answer {
+            font-size: 2.7rem;
+
+            &--yes {
+              color: $green-color;
+            }
+
+            &--no {
+              color: $red-color;
+            }
+          }
+        }
+      }
+    }
+
+    &-details {
+      width: 80%;
+      margin: 1rem auto;
+      font-size: 1.6rem;
+
+      &-item {
+        margin-bottom: 1rem;
+        &-tick {
+          color: darken($green-color, 10%);
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+    &-driveTable {
+      width: 80%;
+      margin: 4rem auto;
+      font-size: 1.6rem;
+
+      &-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        margin-bottom: 1rem;
+        border-left: 5px solid $main-color;
+        padding-left: 1rem;
+
+        &-price {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+// Media Queries
+// Over 768px
+
+@include mixins.mQ(medium) {
+  .offer-page {
+    &__content {
+      &-title {
+        font-size: 6rem;
+        font-weight: 600;
+      }
+
+      &-subtitle {
+        font-size: 2rem;
+
+        &--tip {
+          border: 1px solid $yellow-color;
+          margin: 3rem auto;
+          padding: 2rem 3rem;
+          font-size: 1.8rem;
+        }
+      }
+
+      &-subheading {
+        font-size: 4em;
+      }
+
+      &-cards {
+        margin: 4rem 0;
+        gap: 4rem;
+      }
+
+      &-card {
+        width: 50%;
+
+        &-name {
+          font-size: 2.2rem;
+        }
+
+        &-container {
+          width: 95%;
+          margin: 1rem auto;
+          padding: 1rem 0 3rem;
+        }
+
+        &-price {
+          font-size: 2.2rem;
+        }
+
+        &-details {
+          width: 85%;
+          font-size: 1.8rem;
+        }
+      }
+
+      &-details {
+        margin: 3rem auto;
+        font-size: 1.8rem;
+
+        &-item {
+          margin-bottom: 1rem;
+          &-tick {
+            color: darken($green-color, 10%);
+            font-size: 2.5rem;
+          }
+        }
+      }
+
+      &-driveTable {
+        font-size: 1.8rem;
+        &-item {
+          border-left-width: 10px;
+        }
+      }
+    }
+  }
+}
+
+// Over 1200px
+
+@include mixins.mQ(xlarge) {
+  .offer-page {
+    &__content {
+      &-subtitle {
+        font-size: 2.5rem;
+
+        &--tip {
+          font-size: 2.2rem;
+          margin: 6rem auto;
+        }
+      }
+
+      &-cards {
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin: 6rem 0;
+        gap: 2rem;
+      }
+
+      &-card {
+        width: 27%;
+        margin: 0;
+
+        &--promoted {
+          transform: scale(1.15);
+        }
+
+        &-name {
+          font-size: 2.2rem;
+        }
+
+        &-container {
+          width: 95%;
+          margin: 1rem auto;
+          padding: 1rem 0 3rem;
+        }
+
+        &-price {
+          font-size: 2.2rem;
+        }
+
+        &-details {
+          width: 85%;
+          font-size: 2rem;
+        }
+      }
+
+      &-details {
+        margin: 3rem auto;
+        font-size: 2rem;
+
+        &-item {
+          margin-bottom: 1rem;
+          &-tick {
+            color: darken($green-color, 10%);
+            font-size: 2.5rem;
+          }
+        }
+      }
+
+      &-driveTable {
+        font-size: 2rem;
+        &-item {
+          border-left-width: 10px;
+        }
+      }
+    }
+  }
+}
