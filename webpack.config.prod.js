@@ -36,14 +36,6 @@ module.exports = {
         collapseWhitespace: true,
       },
     }),
-    new HtmlWebpackPlugin({
-      chunks: ['basic', 'style'],
-      template: path.resolve(__dirname, 'src', 'wycena.html'),
-      filename: path.resolve(__dirname, 'dist', 'wycena.html'),
-      minify: {
-        collapseWhitespace: true,
-      },
-    }),
   ],
   module: {
     rules: [
