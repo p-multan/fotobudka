@@ -10,6 +10,8 @@ module.exports = {
   mode: 'production',
   entry: {
     basic: './src/basic.js',
+    home: './src/home.js',
+    gallery: './src/galleryScripts.js',
     style: './src/style.scss',
   },
   output: {

@@ -2,7 +2,7 @@ import { Hamburger } from './js/Hamburger';
 import { CookiesPopup } from './js/CookiesPopup';
 import { Form } from './js/Form';
 
-classHome {
+class Home {
   static init() {
     document.addEventListener('DOMContentLoaded', () => {
       new Hamburger();
@@ -11,4 +11,5 @@ classHome {
     });
   }
 }
+
 Home.init();
