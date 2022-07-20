@@ -21,7 +21,7 @@ module.exports = {
     new MiniCssExtractPlugin(),
     new FixStyleOnlyEntriesPlugin(),
     new HtmlWebpackPlugin({
-      chunks: ['basic', 'style'],
+      chunks: ['home', 'style'],
       template: path.resolve(__dirname, 'src', 'index.html'),
       filename: path.resolve(__dirname, 'dist', 'index.html'),
       minify: {
@@ -32,6 +32,14 @@ module.exports = {
       chunks: ['basic', 'style'],
       template: path.resolve(__dirname, 'src', 'oferta.html'),
       filename: path.resolve(__dirname, 'dist', 'oferta.html'),
+      minify: {
+        collapseWhitespace: true,
+      },
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ['gallery', 'style'],
+      template: path.resolve(__dirname, 'src', 'galeria.html'),
+      filename: path.resolve(__dirname, 'dist', 'galeria.html'),
       minify: {
         collapseWhitespace: true,
       },

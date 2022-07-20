@@ -16,7 +16,7 @@
       <nav class="navbar">
         <div class="contfainer">
           <div class="navbar__header">
-            <a href="/" class="navbar__header-link">
+            <a href="./" class="navbar__header-link">
               <img
                 src="./img/logo.png"
                 alt="Bohobudka Tarnów"
@@ -65,6 +65,11 @@
                   href="./oferta.html"
                   class="navbar__links-menu-item-link navbar__links-menu-item-link--active"
                   >Oferta</a
+                >
+              </li>
+              <li class="navbar__links-menu-item">
+                <a href="./galeria.html" class="navbar__links-menu-item-link"
+                  >Galeria</a
                 >
               </li>
               <li class="navbar__links-menu-item">
@@ -325,34 +330,50 @@
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="container">
-        <h4 class="footer__title">Bohobudka - rustykalna fotobudka</h4>
-        <div class="footer__contact">
-          <a href="mailto:bohobudka@op.pl" class="footer__contact-item">
-            bohobudka@op.pl
-          </a>
-          <a href="tel:792848517" class="footer__contact-item"> 792 848 517 </a>
-          <div class="footer__contact-socials">
-            <a
-              href="https://instagram.com"
-              class="footer__contact-socials-link"
-            >
-              <i
-                class="fa-brands fa-instagram footer__contact-socials-link-icon"
-              ></i>
-            </a>
-            <a href="https://facebook.com" class="footer__contact-socials-link">
-              <i
-                class="fa-brands fa-facebook-f footer__contact-socials-link-icon"
-              ></i>
-            </a>
-          </div>
-        </div>
-        <p class="footer__summary">
-          &copy; 2022 Bohobudka - rustykalna fotobudka
+    <!-- Cookies popup -->
+    <aside>
+      <div class="cookies-popup" id="cookiesPopup">
+        <p class="cookies-popup__text">
+          Ta strona korzysta z ciasteczek aby świadczyć usługi na najwyższym
+          poziomie. Dalsze korzystanie ze strony oznacza, że zgadzają się
+          Państwo na ich użycie.
         </p>
+        <div class="cookies-popup__buttons">
+          <button class="cookies-popup__button" id="cookies-accept-button">
+            Akceptuję
+          </button>
+          <a
+            href="https://www.google.com"
+            class="cookies-popup__button cookies-popup__button--exit"
+            >Wyjście</a
+          >
+        </div>
       </div>
+    </aside>
+
+    <footer class="footer container">
+      <h4 class="footer__title">Bohobudka - rustykalna fotobudka</h4>
+      <div class="footer__contact">
+        <a href="mailto:bohobudka@op.pl" class="footer__contact-item">
+          bohobudka@op.pl
+        </a>
+        <a href="tel:792848517" class="footer__contact-item"> 792 848 517 </a>
+        <div class="footer__contact-socials">
+          <a href="https://instagram.com" class="footer__contact-socials-link">
+            <i
+              class="fa-brands fa-instagram footer__contact-socials-link-icon"
+            ></i>
+          </a>
+          <a href="https://facebook.com" class="footer__contact-socials-link">
+            <i
+              class="fa-brands fa-facebook-f footer__contact-socials-link-icon"
+            ></i>
+          </a>
+        </div>
+      </div>
+      <p class="footer__summary">
+        &copy; 2022 Bohobudka - rustykalna fotobudka
+      </p>
     </footer>
   </body>
 </html>

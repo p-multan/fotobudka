@@ -19,7 +19,7 @@
         <div class="contfainer">
 
           <div class="navbar__header">
-            <a href="/" class="navbar__header-link">
+            <a href="./" class="navbar__header-link">
               <img
                 src="./img/logo.png"
                 alt="Bohobudka Tarnów"
@@ -68,6 +68,11 @@
               <li class="navbar__links-menu-item">
                 <a href="./oferta.html" class="navbar__links-menu-item-link"
                   >Oferta</a
+                >
+              </li>
+              <li class="navbar__links-menu-item">
+                <a href="./galeria.html" class="navbar__links-menu-item-link"
+                  >Galeria</a
                 >
               </li>
               <li class="navbar__links-menu-item">
@@ -186,7 +191,7 @@
         </div>
         <div class="contact-section__message">
           <i class="fa-solid fa-envelope-open-text contact-section__message-icon"></i>
-          <form action="#" class="contact-section__message-form">
+          <form method="POST" id="js-contactForm" class="contact-section__message-form">
             <div class="contact-section__message-form-row">
               <label for="name" class="contact-section__message-form-label">Imię *</label>
               <input type="text" name="name" id="name" placeholder="Wpisz swoje imię" required class="contact-section__message-form-input">
@@ -204,8 +209,8 @@
             </div>
 
             <div class="contact-section__message-form-row">
-              <label for="topic" class="contact-section__message-form-label">Temat</label>
-              <input type="text" name="topic" id="topic" placeholder="Wpisz temat" class="contact-section__message-form-input">
+              <label for="subject" class="contact-section__message-form-label">Temat</label>
+              <input type="text" name="subject" id="subject" placeholder="Wpisz temat" class="contact-section__message-form-input">
             </div>
 
             <div class="contact-section__message-form-row">
@@ -215,12 +220,34 @@
 
             <button type="submit" class="contact-section__message-form-button">Wyślij</button>
           </form>
-        </div>
-      </section>
-
-      
+          <div class="contact-section__message-rodo">
+            Szczegółowa informacja o przetwarzaniu danych osobowych (klauzula RODO): <a href="./klauzula_RODO.pdf" target="_blank" class="contact-section__message-rodo-link">czytaj całość</a>
+          </div>
+        </div>  
+      </section>      
       <section class="page-banner page-banner--footer"></section>
     </main>
+
+        <!-- Cookies popup -->
+    <aside>
+      <div class="cookies-popup" id="cookiesPopup">
+        <p class="cookies-popup__text">
+          Ta strona korzysta z ciasteczek aby świadczyć usługi na najwyższym
+          poziomie. Dalsze korzystanie ze strony oznacza, że zgadzają się
+          Państwo na ich użycie.
+        </p>
+        <div class="cookies-popup__buttons">
+          <button class="cookies-popup__button" id="cookies-accept-button">
+            Akceptuję
+          </button>
+          <a
+            href="https://www.google.com"
+            class="cookies-popup__button cookies-popup__button--exit"
+            >Wyjście</a
+          >
+        </div>
+      </div>
+    </aside>
 
     <footer class="footer container">
       <h4 class="footer__title">Bohobudka - rustykalna fotobudka</h4>

@@ -8,6 +8,26 @@
   align-items: center;
   gap: 2rem;
 
+  &__alert {
+    @include mixins.position(fixed, null, null, 2%, 50%);
+    transform: translateX(-50%);
+    width: 90vw;
+    min-height: 10vh;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    color: $text-dark-color;
+    &--success {
+      background-color: $green-color;
+    }
+
+    &--fail {
+      background-color: $red-color;
+    }
+  }
+
   &__info {
     text-align: center;
     width: 80%;
@@ -88,6 +108,21 @@
         }
       }
     }
+
+    &-rodo {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+
+      &-link {
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.3s linear;
+
+        &:hover {
+          color: $main-color;
+        }
+      }
+    }
   }
 }
 
@@ -97,6 +132,10 @@
 @include mixins.mQ(medium) {
   .contact-section {
     min-height: 100vh;
+
+    &__alert {
+      font-size: 2rem;
+    }
     &__info {
       margin: 0;
       &-desc {
@@ -133,6 +172,10 @@
           font-size: 1.6rem;
         }
       }
+
+      &-rodo {
+        font-size: 1.4rem;
+      }
     }
   }
 }
@@ -146,6 +189,10 @@
     align-items: center;
     gap: 2rem;
     padding: 8rem 0;
+
+    &__alert {
+      font-size: 2.3rem;
+    }
 
     &__info {
       width: 50%;

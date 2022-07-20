@@ -78,6 +78,14 @@ module.exports = {
         collapseWhitespace: true,
       },
     }),
+    new HtmlWebpackPlugin({
+      chunks: ['index', 'style'],
+      template: path.resolve(__dirname, 'src', 'galeria.html'),
+      filename: path.resolve(__dirname, 'dist', 'galeria.html'),
+      minify: {
+        collapseWhitespace: true,
+      },
+    }),
 
     new webpack.HotModuleReplacementPlugin(),
   ],
